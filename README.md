@@ -1,26 +1,23 @@
-<p align="center">
-<img src="https://github.com/kura-labs-org/kuralabs_deployment_1/blob/main/Kuralogo.png">
-</p>
-<h1 align="center">C4_deployment-3<h1> 
+# Blitz 1
 
-Demonstrate your ability deploy a fully automated Elastic Beanstalk deployment.
+## Purpose:
+The purpose of this blitz test was to asses how our server would handle higher-volume users on the server. We will also identify opportunities to decrease server latency and enhance the overall user experience.
 
-- Create a separate GitHub repository for this application 
+## Problem:
+Once the application was subjected to traffic, specifically 1000 additional requests, the average latency climbed to approx. 40.8 ms. To address the issue of increased latency and maintain the user experience, we would implement the use of Cloudfront (Content Delivery Network).
 
-- Download the files from this repository and upload them to your newly created repository 
+## Implementing Cloudfront
 
-- Be sure to follow the deployment instructions from this repository  
+1) Create a CloudFront distribution
+2) Input origin domain (removed the backslash)
+3) Create a Cache Policy that fits your needs. For this assignment, I used Caching Optimized
+4) Click on Create Distribution
 
-- Document your progress in a .md file in your repository. Also, document any issues you may run into and what you did to fix them.
+Once, you create a distribution, it will give you another URL that allows access to the website/ application with the implementation of Cloudfront. Cloudfront will start distributing content closer to the end user, reducing the load of traffic to the server, as well as, caching frequently accessed content. This in turn will reduce latency and increase the efficiency of the server.
 
-- Make sure your documentation includes these sections:
-  - Purpose
-  - Issues
-  - Steps
-  - System Diagram
-  - Optimization (How would make this deployment more efficient)
+## Cloudfront System Design
+The view the system design for Cloudfron, click [here!]( )
 
-- Lastly, save your documentation and diagram into your repository. Submit your repository link to the LMS
 
-## Deployment instructions Link:
--  Link to instructions: https://github.com/kura-labs-org/c4_deployment-3/blob/main/Deployment-instructions.md
+## Optimization:
+To optimize this, I would implement a way to monitor your server (Amazon Cloudwatch or Datadog) and set a threshold. Once exceeds the threshold it will alert you or set up CloudFront automatically. This way, this process can be automated.
