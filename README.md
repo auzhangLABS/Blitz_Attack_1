@@ -1,7 +1,7 @@
 # Blitz 1
 
 ## Purpose:
-The purpose of this blitz test was to asses how our server would handle higher-volume users on the server. We will also identify opportunities to decrease server latency and enhance the overall user experience.
+The purpose of this blitz test was to assess how our server would handle higher volume on the server. We will also identify opportunities to decrease server latency and enhance the overall user experience.
 
 ## Problem:
 Once the application was subjected to traffic, specifically 1000 additional requests, the average latency climbed to approx. 40.8 ms. To address the issue of increased latency and maintain the user experience, we would implement the use of Cloudfront (Content Delivery Network).
